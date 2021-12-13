@@ -17,17 +17,19 @@ export default class Counters extends Component {
                     className = "btn btn-primary m-2" 
                     onClick = {this.props.onRestart} 
                     disabled = {this.props.Counters.length !== 0 ? "disable": ""}>
-                    <i className="fa fa-recycle" aria-hidden="true" />  
+                    <i className="fa fa-recycle" aria-hidden="true"/>  
                 </button>
-                
+
                 {this.props.Counters.map(counter => (
                      
                 <Counter 
                 key= {counter.id}   
                 counter = {counter}
-               onIncrement = {this.props.onIncrement}
-               onDecrement = {this.props.onDecrement}
-               onDelete =    {this.props.onDelete}>
+                onIncrement = {this.props.onIncrement}
+                onDecrement = {this.props.onDecrement}
+                onDelete =    {this.props.onDelete}
+                onReset =   {this.onReset}
+                onRestart = {this.onRestart}>
                 </Counter>))}
                 </div>
         )

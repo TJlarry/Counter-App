@@ -32,6 +32,18 @@ handleDelete = counterId => {
   this.setState({ Counters });
 };
 
+handleReset = () => {
+  const Counters = this.state.Counters.map(c => {
+      c.value = 0;
+      return c;
+  });
+  this.setState({ Counters });
+};
+
+handleRestart = () => {
+  window.location.reload();
+};
+
   render(){
   return (
     <div className="App">
@@ -41,7 +53,9 @@ handleDelete = counterId => {
         Counters = {this.state.Counters} 
         onIncrement = {this.handleIncrement} 
         onDecrement = {this.handleDecrement}
-        onDelete =  {this.handleDelete}> 
+        onDelete =  {this.handleDelete}
+        onReset = {this.handleReset}
+        onRestart = {this.handleRestart} >
         </Counters>
       
     </div>
