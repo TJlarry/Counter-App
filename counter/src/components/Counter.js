@@ -16,11 +16,13 @@ export default class Counter extends Component {
                         </button>
                         
 
-                        <button className="btn btn-info m-2">
+                        <button className ="btn btn-info m-2" onClick = {() => this.props.onDecrement(this.props.counter)} 
+                         disable= {this.props.counter.value === 0 ? "disabled" : ""} >
                         <i className="fa fa-minus-circle" aria-hidden="true" />
                         </button>
 
-                        <button className="btn btn-danger">
+                        <button className="btn btn-danger" onClick={() => this.props.onDelete(this.props.counter.id)}
+                         >
                         <i className="fa fa-trash-o" aria-hidden="true" />
                         </button>
                         

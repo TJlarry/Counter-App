@@ -19,12 +19,15 @@ export default class Counters extends Component {
                     disabled = {this.props.Counters.length !== 0 ? "disable": ""}>
                     <i className="fa fa-recycle" aria-hidden="true" />  
                 </button>
-                {this.props.Counters.map(counter =>(
+                
+                {this.props.Counters.map(counter => (
                      
                 <Counter 
-                key= {counter.id} 
+                key= {counter.id}   
                 counter = {counter}
-               onIncrement = {this.props.onIncrement}>
+               onIncrement = {this.props.onIncrement}
+               onDecrement = {this.props.onDecrement}
+               onDelete =    {this.props.onDelete}>
                 </Counter>))}
                 </div>
         )
