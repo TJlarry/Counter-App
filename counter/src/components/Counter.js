@@ -6,11 +6,12 @@ export default class Counter extends Component {
             <div>
                 <div className="row">
                     <div className="col-md-1">
-                        <span style={{ fontSize: 24 }}> </span>
-                     </div>
-
-                    <div className="col-md-4">
-                        <button className="btn btn-secondary">
+                        <span style={{ fontSize: 24 }} className = {this.getBadgeClasses() }>
+                        {this.formatCount()}
+                             </span>
+                        </div>
+                   <div className="col-md-4">
+                        <button className = "btn btn-secondary" onClick= {() => this.props.onIncrement(this.props.counter)}>
                         <i className="fa fa-plus-circle" aria-hidden="true" />
                         </button>
                         
@@ -37,7 +38,7 @@ export default class Counter extends Component {
 
 formatCount = () => {
     const {value} = this.props.counter;
-    return value === 0? "zero" : value;
+    return value === 0 ? "zero" : value;
 
 
 }
